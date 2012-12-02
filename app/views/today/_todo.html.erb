@@ -1,0 +1,9 @@
+        <li id="todo_<%= todo.id%>">
+        <%= link_to "Mark Complete",:controller => "task",:action => "mark_complete",:id => todo.task.id%>
+        <% if todo.task.complete%>
+            <strike><em><%= todo.task.name %></em></strike>
+        <% else %>
+            <%= todo.task.name %>
+        <% end %>
+        <%= link_to "Remove from Today",todo_path(todo),:method => :delete%>
+        </li>

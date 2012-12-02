@@ -1,0 +1,12 @@
+<% current_user.tasks.overdue do |task| %>
+<%= link_to"Do Today",new_todo_path(task) %>
+<%= link_to "Delete",task_path(task),:method => :delete %>
+<% end %>
+<% current_user.tasks.today do |task| %>
+<%= link_to"Do Today",new_todo_path(task) %>
+<%= link_to "Delete",task_path(task),:method => :delete %>
+<% end %>
+<% current_user.tasks.upcoming do |task| %>
+<%= link_to"Do Today",new_todo_path(task) %>
+<%= link_to "Delete",task_path(task),:method => :delete %>
+<% end %>

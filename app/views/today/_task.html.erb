@@ -1,0 +1,11 @@
+    <%= form_for :task,:url => {:controller => "/task",:action => :create }  do |f|%>
+        <p>
+        <%= f.label :Task %><%= f.text_field :name%>
+        </p>
+        <p>
+        <%= f.label :Due_Date %><%= f.date_select :due,:order => [:day,:month,:year]%>
+        </p>
+        <p>
+        <%= f.submit :class => "btn btn-primary"%>
+        </p>
+    <% end %>

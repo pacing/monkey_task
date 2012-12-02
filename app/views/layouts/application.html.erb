@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monkey</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Monkey Tasks</a>
+    <ul class="nav">
+       <li><%= link_to "Today",:controller => "/today",:action => "index"%></li>
+       <% if user_signed_in? %> 
+       <li><%= link_to "Sign out",destroy_user_session_path,:method => :delete %></li>
+       <% else %>
+       <li><%= link_to "Sign up",new_user_registration_path%></li>
+       <li><%= link_to "Sign in",new_user_session_path%></li>
+       <% end %>
+    </ul>
+    </div><!--End container-->
+  </div><!--End navbar-inner-->
+</div><!--navbar navbar-fixed-top-->
+<div class="container-fluid">
+    <div class="row-fluid">
+         <div class="span11 offset1">
+           <% if user_signed_in? %>
+           <p class="notice"><%= notice %></p>
+           <p class="alert"><%= alert %></p>
+           <% end %>
+           <%= yield %>
+         </div><!--End span9-->
+    </div><!--End row-fluid-->
+</div><!--End container-fluid-->
+</body>
+</html>
