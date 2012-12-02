@@ -36,7 +36,7 @@ class TaskController < ApplicationController
              @task.complete = nil 
           end
           @task.save! 
-          redirect_to :controller => today , :action => "index"
+          redirect_to :controller => "today" , :action => "index"
       end
      
       protected

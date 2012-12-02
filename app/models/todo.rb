@@ -1,5 +1,5 @@
 class Todo < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :title, :body,:task_id
   belongs_to :schedule
   belongs_to :task
   #  acts_as_list  :scope => :schedule

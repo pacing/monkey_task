@@ -5,5 +5,5 @@
         <% else %>
             <%= todo.task.name %>
         <% end %>
-        <%= link_to "Remove from Today",todo_path(todo),:method => :delete%>
+        <%= link_to "Remove from Today",:controller => "todo",:action => "destroy",:id => todo.id %>
         </li>

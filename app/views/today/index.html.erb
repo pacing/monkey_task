@@ -13,19 +13,19 @@
      <h6>OverDue Tasks</h6>
      <% for task in current_user.tasks.overdue %>
      <%= task.name %><br />
-     <%= link_to "Do Today",new_todo_path(task) %><br />
+     <%= link_to "Do Today",:controller => "todo",:action => "create",:id => task.id%><br />
      <%= link_to "Delete",:controller => "task",:action => "destroy",:id => task.id %><br /><br />
      <% end %>
      <h6>Due Today</h6>
      <% for task in  current_user.tasks.today  %>
      <%= task.name %><br />
-     <%= link_to"Do Today",new_todo_path(task) %><br />
+     <%= link_to"Do Today",:controller => "todo",:action=>"create",:id=>task.id %><br />
      <%= link_to "Delete",:controller => "task",:action => "destroy",:id => task.id %><br /><br />
      <% end %>
      <h6>Upcoming Tasks</h6>
      <% for task in current_user.tasks.upcoming %>
      <%= task.name %><br />
-     <%= link_to"Do Today",new_todo_path(task) %><br />
+     <%= link_to"Do Today",:controller => "todo",:action => "create",:id => task.id %><br />
      <%= link_to "Delete",:controller => "task",:action => "destroy",:id => task.id %><br /><br />
      <% end %>
      </div>
